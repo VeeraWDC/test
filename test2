@@ -1,0 +1,16 @@
+$webhook = 'https://outlook.office.com/webhook/fb7193d7-0c90-4b83-b246-650c1eb2c54b@b61c8803-16f3-4c35-9b17-
+
+6f65f441df86/GitHub/15286e14e38b4846b291b479ce065b07/5d16c7e0-5adb-42a1-ac15-612d15f2a1ab'
+
+$Body = @{
+        'text'= 'Hello World! from PowerShell'
+}
+
+$params = @{
+    Headers = @{'accept'='application/json'}
+    Body = $Body | convertto-json
+    Method = 'Post'
+    URI = $webhook 
+}
+
+Invoke-RestMethod @params
